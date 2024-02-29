@@ -11,13 +11,8 @@ public static void main(String[] args) throws Exception {
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcm8","root","root");
 //	Create a Statement
-	PreparedStatement preparedStatement=connection.prepareStatement("Select * from User where id=?");
-	Scanner scanner=new Scanner(System.in);
-	System.out.println("Please enter the Id to be selected");
-	int id=scanner.nextInt();
+	PreparedStatement preparedStatement=connection.prepareStatement("Select * from User");
 	
-	preparedStatement.setInt(1, id);
-
 //	execute a query
 	ResultSet resultSet=preparedStatement.executeQuery();
 	
@@ -28,6 +23,6 @@ public static void main(String[] args) throws Exception {
 	}
 	
 	connection.close();
-	System.out.println("Data selected successfully with PS");
+	System.out.println("Data selected2 successfully with PS");
 }
 }
